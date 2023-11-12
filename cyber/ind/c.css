@@ -1,0 +1,63 @@
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        background-color: #001728;
+        overflow-y: hidden;
+      }
+
+      .r {
+        background-color: rgba(143, 165, 187, 0.297);
+        text-align: center;
+        padding: 10px;
+        font-size: medium;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 30px 10px auto;
+      }
+      .v {
+        background-color: rgba(234, 56, 79, 0.724);
+        text-align: center;
+        padding: 15px;
+        font-size: large;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 30px 10px auto;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(243, 232, 243);
+      }
+      .r:hover {
+        background-color: rgba(188, 186, 186, 0.831);
+        color: black;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #000;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #333;
+      }
+      /*@media screen and (max-width: 768px) {
+        .r {
+          font-size: 15px;
+          padding: 5px;
+        }
+        .v {
+          font-size: 18px;
+          padding: 5px 10px;
+        }
+      }*/

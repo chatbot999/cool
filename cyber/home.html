@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script>
+      if (!isLoggedIn()) {
+        window.location.href = "../index.html";
+      }
+
+      function isLoggedIn() {
+        var loggedIn = sessionStorage.getItem("loggedIn");
+        return loggedIn === "true"; 
+      }
+    
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+          e.preventDefault();
+          return false;
+        }
+      }
+
+      document.addEventListener("contextmenu", disableRightClick);
+    </script>
+    <style>
+      #title {
+        background-color: #001728;
+        text-align: center;
+        padding: 8px 8px;
+        font-family: cursive;
+        font-size: 130%;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      #fullscreenButton {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        left: 1%;
+        padding: 10px;
+
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        background-color: rgba(143, 165, 187, 0.297);
+        color: rgb(243, 232, 243);
+      }
+
+      #b2 {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        left: 2%;
+        padding: 10px 20px;
+
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        background-color: rgba(143, 165, 187, 0.297);
+        color: rgb(243, 232, 243);
+      }
+      #b4 {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        left: 2%;
+        padding: 10px 20px;
+
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        
+        color: #4eb05b;
+      }
+      #b3 {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        position: fixed;
+        color: white;
+        right: 1%;
+        background-color: rgba(234, 56, 79, 0.724);
+      }
+
+      @media (max-width: 768px) {
+        #b1,
+        #b2,
+        #b3,
+        #b4 {
+          padding: 8px 8px;
+        }
+
+        #b1,
+        #b2 {
+          left: 0; 
+        }
+        #b3 {
+          right: 0%;
+        }
+      }
+      body {
+        margin: 0;
+        background-color: #001728;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        user-select: none;
+        overflow-y: hidden;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #040303;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      li {
+        flex: 1;
+        max-width: 300px;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        padding: 10px 22px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: large;
+        text-align: center;
+      }
+
+      h3 {
+        font-family: inherit;
+        font-weight: 600;
+      }
+      .container {
+        height: 100vh;
+        overflow-y: hidden;
+        background-color: white;
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 150vh;
+      }
+
+      .main {
+        position: relative;
+        width: 100%;
+        height: 0;
+      }
+
+      h5 {
+        font-size: 13px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .top {
+        max-width: 100%;
+        width: 100%;
+        background-color: black;
+      }
+
+      .ttlab-cont {
+        text-align: center;
+        background-color: black;
+      }
+
+      .ttlab {
+        color: white;
+        text-align: center;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #000;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #333;
+      }
+      @media screen and (min-width: 600px) {
+        li {
+          width: 100px;
+        }
+        li a {
+          padding: 10px 22px;
+        }
+      }
+    </style>
+    <script>
+      function redirectToIndex() {
+        window.location.href = "../index.html";
+      }
+    </script>
+  </head>
+  <body>
+    &nbsp;
+    <button onclick="toggleFullscreen();" id="fullscreenButton">Study Mode</button>
+   
+   
+
+   <script>
+     var elem = document.documentElement;
+     var fullscreenButton = document.getElementById("fullscreenButton");
+
+     function openFullscreen() {
+       if (elem.requestFullscreen) {
+         elem.requestFullscreen();
+       } else if (elem.mozRequestFullScreen) {
+         elem.mozRequestFullScreen();
+       } else if (elem.webkitRequestFullscreen) {
+         elem.webkitRequestFullscreen();
+       } else if (elem.msRequestFullscreen) {
+         elem = window.top.document.body;
+         elem.msRequestFullscreen();
+       }
+       fullscreenButton.innerHTML = "Exit";
+     }
+
+     function closeFullscreen() {
+       if (document.exitFullscreen) {
+         document.exitFullscreen();
+       } else if (document.mozCancelFullScreen) {
+         document.mozCancelFullScreen();
+       } else if (document.webkitExitFullscreen) {
+         document.webkitExitFullscreen();
+       } else if (document.msExitFullscreen) {
+         window.top.document.msExitFullscreen();
+       }
+       fullscreenButton.innerHTML = "Study Mode";
+     }
+
+     function toggleFullscreen() {
+       if (
+         !document.fullscreenElement &&
+         !document.mozFullScreenElement &&
+         !document.webkitFullscreenElement &&
+         !document.msFullscreenElement
+       ) {
+         openFullscreen();
+       } else {
+         closeFullscreen();
+       }
+     }
+
+     var output = document.getElementById("myP");
+     document.addEventListener("fullscreenchange", function () {
+       output.innerHTML = "";
+     });
+     document.addEventListener("mozfullscreenchange", function () {
+       output.innerHTML = "mozfullscreenchange event fired!";
+     });
+     document.addEventListener("webkitfullscreenchange", function () {
+       output.innerHTML = "webkitfullscreenchange event fired!";
+     });
+     document.addEventListener("msfullscreenchange", function () {
+       output.innerHTML = "msfullscreenchange event fired!";
+     });
+   </script>
+    <span id="b4">Cyber Security</span>
+    <button onclick="redirectToIndex();" id="b3">Logout</button>
+
+    <ul>
+      <li>
+        <a
+          id="a"
+          href=".\web-f\source\2cse\2csel.html"
+          target="mainframe"
+          draggable="false"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          id="b"
+          href=".\frame\Datastructures.html"
+          target="mainframe"
+          draggable="false"
+          >Data Structures</a
+        >
+      </li>
+      
+      <li>
+        <a
+          id="d"
+          href=".\frame\dms.html"
+          target="mainframe"
+          draggable="false"
+          >DMS</a
+        >
+      </li>
+      <li>
+        <a
+          id="e"
+          href=".\frame\mpca.html"
+          target="mainframe"
+          draggable="false"
+          >MPCA</a
+        >
+      </li>
+      <li>
+        <a id="f" href=".\frame\ps.html" target="mainframe" draggable="false">P&S</a>
+      </li>
+      <li>
+        <a id="g" href=".\frame\stream.html" target="mainframe" draggable="false">Cyber Security</a>
+      </li>
+    </ul>
+
+    <div class="iframe-container">
+      <iframe
+        id="main"
+        src=".\web-f\source\2cse\2csel.html"
+        frameborder="10"
+        name="mainframe"></iframe>
+    </div>
+
+    <script src="..\cyber\index.js"></script>
+  </body>
+</html>
