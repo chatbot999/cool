@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Form</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        text-align: center;
+    }
+    input[type="email"] {
+        width: 250px;
+        padding: 10px;
+        margin: 20px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Request Your own PDF to Display Here</h2>
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <button onclick="sendEmail()">Mail</button>
+</div>
+
+<script>
+    function sendEmail() {
+        var email = document.getElementById('emailInput').value;
+        if (email) {
+            // Replace 'mailto:' with your server-side email handling script
+            window.location.href = 'mailto:billaakshith@gmail.com?subject=PDF Request&body=Please send me the PDF.';
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    }
+</script>
+</body>
+</html>

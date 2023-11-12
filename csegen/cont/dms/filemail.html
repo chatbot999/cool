@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #fileInput {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>PDF Uploader</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("user_your_user_id"); // Replace with your User ID
+        })();
+
+        function mailFile() {
+            const fileInput = document.getElementById('fileInput');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            // Use EmailJS to send an email
+            const templateParams = {
+                to_email: "billaakshith@gmail.com", // Replace with your recipient's email
+                from_name: "Your Name", // Replace with your name
+                message: "Please find the attached file.",
+                file: formData.get("file"),
+            };
+
+            emailjs.send('service_your_service_id', 'template_your_template_id', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Email sent successfully!');
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Request Your own PDF to display here</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" />
+        <button type="button" onclick="mailFile()">Mail Us</button>
+    </form>
+</body>
+
+</html>
