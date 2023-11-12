@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title><link rel="stylesheet" type="text/css" href="./c.css">
+    <script>
+      // Function to disable right-click
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    // Attach the event listener
+    document.addEventListener('contextmenu', disableRightClick);
+
+    </script>
+    
+  </head>
+  <body>
+   
+    <a class="v" href="..\cont\mpca\mpcahomebg.html" target="rightframe">MPCA</a>
+    
+    <a class="r" href="..\cont\mpca\mpcaunit1.html" target="rightframe"
+      >UNIT-1</a
+    >
+    <a class="r" href="..\cont\mpca\mpcaunit2.html" target="rightframe"
+      >UNIT-2</a
+    >
+    <a class="r" href="..\cont\mpca\mpacunit3.html" target="rightframe"
+      >UNIT-3</a
+    >
+
+    <a class="r"href="..\cont\mpca\mpcaunit4.html" target="rightframe">UNIT-4</a>
+    <a class="r"href="..\cont\mpca\mpcaunit5.html" target="rightframe">UNIT-5</a>
+    <script src="./ind/left.js"></script>
+  </body>
+</html>

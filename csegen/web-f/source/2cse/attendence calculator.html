@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      #container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input[type="number"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      #result,
+      #attendanceGoal {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;width: 90%;
+      }
+      #d1 {
+        color: green;
+      }
+    </style>
+    <script>
+       // Function to disable right-click
+       function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+          e.preventDefault();
+          return false;
+        }
+      }
+
+      // Attach the event listener
+      document.addEventListener("contextmenu", disableRightClick);
+    </script>
+  </head>
+  <body>
+    <h1>Attendance Calculator</h1>
+    <div id="container">
+      <form id="attendanceForm">
+        <label for="totalClasses">Total Held Classes:</label>
+        <input type="number" id="totalClasses" required /><br /><br />
+
+        <label for="attendedClasses">Attended Classes:</label>
+        <input type="number" id="attendedClasses" required /><br /><br />
+
+        <label for="targetPercentage">Select Target Attendance:</label>
+        <select id="targetPercentage">
+          <option value="75">75%</option>
+          <option value="76">76%</option>
+          <option value="77">77%</option>
+          <option value="78">78%</option>
+          <option value="79">79%</option>
+          <option value="80">80%</option>
+          <option value="81">81%</option>
+          <option value="82">82%</option>
+          <option value="83">83%</option>
+          <option value="84">84%</option>
+          <option value="85">85%</option>
+          <option value="86">86%</option>
+          <option value="87">87%</option>
+          <option value="88">88%</option>
+          <option value="89">89%</option>
+          <option value="90">90%</option>
+          <option value="91">91%</option>
+          <option value="92">92%</option>
+          <option value="93">93%</option>
+          <option value="94">94%</option>
+          <option value="95">95%</option>
+          <option value="96">96%</option>
+          <option value="97">97%</option>
+          <option value="98">98%</option>
+          <option value="99">99%</option>
+          <option value="100">100%</option>
+        </select>
+        <br /><br />
+
+        <input type="submit" value="Calculate" />
+      </form>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("attendanceForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const totalClasses = parseInt(
+            document.getElementById("totalClasses").value
+          );
+          const attendedClasses = parseInt(
+            document.getElementById("attendedClasses").value
+          );
+          const targetPercentage = parseInt(
+            document.getElementById("targetPercentage").value
+          );
+
+          const attendancePercentage = (attendedClasses / totalClasses) * 100;
+
+          const resultElement = document.getElementById("result");
+
+          if (attendancePercentage >= targetPercentage) {
+            resultElement.innerHTML = `<p>Your attendance is: <b>${attendancePercentage.toFixed(
+              2
+            )}%.</b> <br>You have already achieved <b> ${targetPercentage}% </b>attendance!</p>`;
+          } else {
+            const classesToAttend = Math.ceil(
+              ((targetPercentage / 100) * totalClasses - attendedClasses) /
+                (1 - targetPercentage / 100)
+            );
+            resultElement.innerHTML = `<p>Your attendance is: <b>${attendancePercentage.toFixed(
+              2
+            )}%.</b> <br> You need to attend <b>${classesToAttend}</b> more classes to achieve ${targetPercentage}% attendance.</p>`;
+          }
+        });
+    </script>
+  </body>
+</html>
