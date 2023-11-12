@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Function to disable right-click
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+          e.preventDefault();
+          return false;
+        }
+      }
+
+      // Attach the event listener
+      document.addEventListener("contextmenu", disableRightClick);
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: large;
+        background-color: #001728;
+        height: 1100vh;
+        overflow-y: scroll;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #040303;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      li {
+        flex: 1;
+        max-width: 300px;
+      }
+      .r {
+        background-color: rgba(143, 165, 187, 0.297);
+        text-align: center;
+        padding: 18px 2px;
+        font-size: medium;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 30px auto;
+        width: 30%;
+      }
+      .v {
+        background-color: rgba(234, 56, 79, 0.724);
+        text-align: center;
+        padding: 18px 2px;
+        font-size: large;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+        width: 30%;
+      }
+
+      .t {
+        text-align: center;
+        padding: 20px 5px;
+        font-size: large;
+        color: rgb(243, 232, 243);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+        width: 30%;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(243, 232, 243);
+      }
+      .r:hover {
+        background-color: rgba(188, 186, 186, 0.831);
+        color: black;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #000;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #333;
+      }
+      @media screen and (max-width: 768px) {
+        .r {
+          font-size: 15px;
+          padding: 8px 10px;
+        }
+        .v {
+          font-size: 18px;
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <a class="v" href="https://sru.edu.in/" target="blank">SRU</a>
+    <a class="r" href=".\2cse.html" target="mainframe" draggable="false">II&nbsp;-&nbsp;CSE&nbsp;&nbsp;<br />TIME&nbsp;TABLES</a>
+    <a class="r" href="https://sraap.in/slogin.php" target="blank" draggable="false">SRAAP</a>
+    <a class="r" href="attendence calculator.html" target="mainframe" draggable="false">Attendence Calculator</a>
+    <a class="r" href="https://labs.codezinger.com/login" target="blank"draggable="false">Code Zinger</a>
+    <a class="r" href="academic calender.html" target="mainframe"draggable="false">Academic Calender</a>
+    <a class="r" href="https://enterprise.edx.org/sr-university" target="blank"draggable="false">Edx</a>
+    <a class="r" href="https://www.coursera.org/courseraplus?utm_source=bg&utm_medium=sem&utm_campaign=B2C_INDIA_subscribe__FTCOF_courseraplus_arte_bing_monthly&utm_content=B2C_INDIA_subscribe__FTCOF_courseraplus_arte_bing_monthly&campaignid=426115657&adgroupid=1219358883568779&device=c&keyword=coursera%20online%20courses&matchtype=p&network=o&devicemodel=&adpostion=&creativeid=&msclkid=0243f14bf42a1d998c9e946c9322d011&utm_term=coursera%20online%20courses" target="blank"draggable="false">Coursera</a>
+    <a class="r" href="https://examfee.in/" target="blank"draggable="false">EXAM FEE</a>
+    <a class="r" href="https://canvas.instructure.com/login/canvas" target="blank"draggable="false">CANVAS</a>
+
+    <script src="./ind/left.js"></script>
+  </body>
+</html>
