@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title><link rel="stylesheet" type="text/css" href="./c.css">
+    <script>
+      
+      function disableRightClick(e) {
+        if (e.button === 2 || e.which === 3) {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    
+    document.addEventListener('contextmenu', disableRightClick);
+
+    </script>
+    
+  </head>
+  <body>
+    <a class="v" href="..\cont\stream\streamhomebg.html" target="rightframe">STAT ML</a>
+
+    <a class="r" href="..\cont\stream\streamunit1.html" target="rightframe">UNIT-1</a>
+
+    <a class="r" href="..\cont\stream\streamunit2bg.html" target="rightframe">UNIT-2</a>
+    <a class="r"href="..\cont\stream\streamunit3bg.html" target="rightframe">UNIT-3</a>
+    <a class="r"href="..\cont\stream\streamunit4.html" target="rightframe">UNIT-4</a>
+    <a class="r"href="..\cont\stream\streamunit5.html" target="rightframe">UNIT-5</a><br />
+    <script src="./ind/left.js"></script>
+  </body>
+</html>
